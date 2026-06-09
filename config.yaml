@@ -1,0 +1,20 @@
+# ---- inputs ----
+assemblies_dir: "assemblies"      # directory of assembled genomes, one isolate per file
+assembly_ext: "fa"                # extension to glob (fa / fasta / fna)
+phenotype: "resistances.pheno"    # TSV: sample <tab> binary phenotype (0/1); header "samples <pheno>"
+tree: "core_genome.tree"          # MIDPOINT-ROOTED core-genome phylogeny (Newick)
+
+# known-AMR reference for the "is this already catalogued?" test.
+#   nucl  -> ResFinder / CARD nucleotide FASTA  (uses blastn)
+#   prot  -> AMRFinderPlus reference proteins   (uses blastx)
+amr_db: "resfinder_db.fasta"
+amr_db_type: "nucl"
+
+# ---- output / resources ----
+outdir: "results"
+threads: 8
+
+# ---- statistics / filtering ----
+alpha: 0.05                       # family-wise error for the Bonferroni threshold
+min_identity: 80                  # % identity for a unitig to count as a KNOWN-AMR hit
+min_coverage: 0.8                 # fraction of the unitig covered by the AMR hit

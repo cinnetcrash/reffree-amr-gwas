@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it."
+title: "Reference-free AMR GWAS + mobilome triage"
+abstract: >-
+  A Snakemake pipeline that detects antimicrobial-resistance determinants absent
+  from curated databases via a unitig-based mixed-model GWAS (pyseer), then
+  classifies significant unitigs as known vs novel against an AMR database and
+  scores their phylogenetic mobility (independent acquisitions by small
+  parsimony) to flag horizontally transferred candidates and de-prioritise
+  residual lineage artifacts.
+authors:
+  - given-names: Gültekin
+    family-names: ""        # TODO: add surname
+    # orcid: "https://orcid.org/0000-0000-0000-0000"   # TODO: add ORCID
+keywords:
+  - antimicrobial resistance
+  - bacterial GWAS
+  - unitig
+  - pyseer
+  - mobile genetic elements
+  - genomic surveillance
+license: MIT

@@ -1,0 +1,17 @@
+name: reffree-gwas
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python>=3.9
+  - snakemake-minimal>=7
+  - pyseer>=1.3.11
+  - unitig-caller>=1.3
+  - blast>=2.14
+  - mash>=2.3          # optional: fixed-effects route / sketch distances
+  - pandas>=1.5
+  - numpy>=1.23
+  # tree building (if you don't already have a core phylogeny) is separate, e.g.:
+  #   - parsnp / panaroo / roary  (core alignment)
+  #   - iqtree                    (phylogeny)
+  #   - gubbins / clonalframeml   (recombination removal, recommended before LMM)
