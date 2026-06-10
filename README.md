@@ -1,5 +1,8 @@
 # Reference-free AMR GWAS + mobilome triage
 
+[![CI](https://github.com/cinnetcrash/reffree-amr-gwas/actions/workflows/ci.yml/badge.svg)](https://github.com/cinnetcrash/reffree-amr-gwas/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 A Snakemake pipeline that finds **resistance determinants that are not in any
 database**, and tells you which of them are **mobile** (jumping between hosts)
 rather than clonally inherited.
