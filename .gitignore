@@ -1,6 +1,7 @@
 # pipeline outputs
 results/
 .snakemake/
+realdata/
 
 # python
 __pycache__/

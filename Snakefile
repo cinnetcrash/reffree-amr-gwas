@@ -42,6 +42,16 @@ rule unitig_call:
         "unitig-caller --call --refs {input} --out {params.pref} --threads {threads}"
 
 
+# --- pyseer reads the variant file gzip-only; keep the plain copy for mobility ---
+rule gzip_unitigs:
+    input:
+        f"{OUT}/unitigs.pyseer",
+    output:
+        f"{OUT}/unitigs.pyseer.gz",
+    shell:
+        "gzip -kf {input}"
+
+
 # --- LMM kinship from the core phylogeny (Brownian covariance) ---
 # Faithful alternative: pyseer's own scripts/phylogeny_distance.py --lmm tree.
 rule kinship:
@@ -57,7 +67,7 @@ rule kinship:
 rule pyseer_lmm:
     input:
         pheno=config["phenotype"],
-        unitigs=f"{OUT}/unitigs.pyseer",
+        unitigs=f"{OUT}/unitigs.pyseer.gz",
         K=f"{OUT}/phylogeny_K.tsv",
     output:
         assoc=f"{OUT}/associations.txt",
